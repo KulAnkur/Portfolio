@@ -6,21 +6,6 @@ import { Badge } from '@/components/ui/badge';
 const Projects = () => {
   const featuredProjects = [
     {
-      title: "Energy Sense",
-      description: "Smart energy optimization system using ESP32 microcontroller and AWS-based machine learning models. Integrated multiple sensors to collect real-time environmental data and provide energy usage predictions.",
-      longDescription: "Developed a comprehensive IoT solution that reduces energy consumption by 25% across 10+ appliances. The system uses C++ for microcontroller programming, Python for ML models, and AWS for cloud processing.",
-      technologies: ["ESP32", "C++", "Python", "AWS", "Machine Learning", "IoT Sensors"],
-      achievements: [
-        "25% reduction in energy consumption",
-        "30% improvement in energy usage predictions",
-        "Real-time monitoring of 4+ sensor types"
-      ],
-      icon: <Zap className="h-6 w-6" />,
-      gradient: "from-yellow-400 to-orange-500",
-      github: "#",
-      demo: "#"
-    },
-    {
       title: "Smart Email Responder Workflow",
       description: "Automated email classification and response system using Gemini 2.0 API integrated with Google Cloud Functions. Processes 300+ emails daily with intelligent categorization and context-aware responses.",
       longDescription: "Built a scalable serverless solution that reduces manual email triage workload by 50%. Features real-time processing, automated meeting scheduling, and maintains 99% SLA compliance.",
@@ -32,8 +17,9 @@ const Projects = () => {
       ],
       icon: <Brain className="h-6 w-6" />,
       gradient: "from-blue-400 to-purple-500",
-      github: "#",
-      demo: "#"
+      imagePath: "/smart-email-workflow.png",
+      github: "https://www.linkedin.com/in/ankurkul95/details/projects/1749426443108/single-media-viewer/?profileId=ACoAADWDorkBVG1pG1DO4vHT3JINoFyVBZqP_0w",
+      demo: "https://www.linkedin.com/in/ankurkul95/details/projects/1749426443108/single-media-viewer/?profileId=ACoAADWDorkBVG1pG1DO4vHT3JINoFyVBZqP_0w"
     },
     {
       title: "Medical Chatbot Fine-Tuning",
@@ -47,8 +33,8 @@ const Projects = () => {
       ],
       icon: <Database className="h-6 w-6" />,
       gradient: "from-green-400 to-teal-500",
-      github: "#",
-      demo: "#"
+      github: "https://colab.research.google.com/drive/1QluvWwkXBA-Ss-FXorO9SRoWKkYUfFoM?usp=sharing",
+      demo: "https://colab.research.google.com/drive/1QluvWwkXBA-Ss-FXorO9SRoWKkYUfFoM?usp=sharing"
     },
     {
       title: "Data Storytelling Web Application",
@@ -62,8 +48,8 @@ const Projects = () => {
       ],
       icon: <BarChart3 className="h-6 w-6" />,
       gradient: "from-pink-400 to-red-500",
-      github: "#",
-      demo: "#"
+      github: "https://github.com/KulAnkur",
+      demo: "https://data-host.vercel.app/"
     }
   ];
 
@@ -72,19 +58,19 @@ const Projects = () => {
       title: "Unity3D VR Training Platform",
       description: "Immersive technician training platform with GPT-3 NLP integration, reducing training time from 3 days to 20 hours.",
       technologies: ["Unity3D", "VR", "GPT-3", "C#"],
-      github: "#"
+      github: "https://github.com/KulAnkur"
     },
     {
       title: "Housing Market Analysis Pipeline",
       description: "Built data pipelines using rotating proxies to scrape Zillow across 500+ ZIP codes for post-disaster policy decisions.",
       technologies: ["Python", "Azure Maps", "Data Pipeline", "Geospatial"],
-      github: "#"
+      github: "https://github.com/KulAnkur"
     },
     {
       title: "Legal Question Answering System",
       description: "Counsel-AI: Legal Question Answering (LQA) system tailored for law with advanced NLP capabilities.",
       technologies: ["Python", "NLP", "Legal Tech", "AI"],
-      github: "#"
+      github: "https://github.com/KulAnkur/Counsel-Ai"
     }
   ];
 
@@ -146,11 +132,20 @@ const Projects = () => {
                     </div>
 
                     <div className="flex space-x-4">
-                      <Button size="sm" className="font-inter">
+                      <Button 
+                        size="sm" 
+                        className="font-inter"
+                        onClick={() => window.open(project.github, '_blank')}
+                      >
                         <Github className="mr-2 h-4 w-4" />
                         Code
                       </Button>
-                      <Button size="sm" variant="outline" className="font-inter">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="font-inter"
+                        onClick={() => window.open(project.demo, '_blank')}
+                      >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         Live Demo
                       </Button>
@@ -158,7 +153,23 @@ const Projects = () => {
                   </div>
 
                   <div className="lg:order-first">
-                    <div className={`aspect-video rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                    {project.imagePath ? (
+                      <div className="aspect-video rounded-lg overflow-hidden bg-card border border-border">
+                        <img
+                          src={project.imagePath}
+                          alt={`${project.title} workflow diagram`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // If image fails to load, hide the image container and show gradient
+                            e.target.parentElement.style.display = 'none';
+                            e.target.parentElement.nextElementSibling.style.display = 'flex';
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                    <div 
+                      className={`aspect-video rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center ${project.imagePath ? 'hidden' : ''}`}
+                    >
                       <div className="text-white text-6xl opacity-20">
                         {project.icon}
                       </div>
@@ -196,7 +207,12 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <Button size="sm" variant="ghost" className="w-full font-inter">
+                  <Button 
+                    size="sm" 
+                    variant="ghost" 
+                    className="w-full font-inter"
+                    onClick={() => window.open(project.github, '_blank')}
+                  >
                     <Github className="mr-2 h-4 w-4" />
                     View Code
                   </Button>
@@ -211,7 +227,12 @@ const Projects = () => {
           <p className="font-inter text-muted-foreground mb-4">
             Want to see more of my work?
           </p>
-          <Button variant="outline" size="lg" className="font-inter">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="font-inter"
+            onClick={() => window.open('https://github.com/KulAnkur', '_blank')}
+          >
             <Github className="mr-2 h-4 w-4" />
             View All Projects on GitHub
           </Button>

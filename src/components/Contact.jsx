@@ -46,7 +46,7 @@ const Contact = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/ankurkul95/",
+      href: "https://www.linkedin.com/in/ankurkul95",
       username: "ankurkul95"
     }
   ];
