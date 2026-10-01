@@ -1,29 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ankur Kulkarni - Full-Stack Software Engineer specializing in AI & automation systems. USC Computer Science Master's student building impactful software solutions." />
-    <meta name="keywords" content="Ankur Kulkarni, Software Engineer, Full Stack Developer, AI, Machine Learning, React, Node.js, Python, USC" />
+    <meta name="theme-color" content="#111113" />
+    <meta
+      name="description"
+      content="Ankur Kulkarni — software, AI, and autonomous systems engineer. Explore two perspectives on building reliable, intelligent systems. USC M.S. Computer Science."
+    />
     <meta name="author" content="Ankur Kulkarni" />
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ankurkulkarni.dev/" />
-    <meta property="og:title" content="Ankur Kulkarni - Full-Stack Software Engineer" />
-    <meta property="og:description" content="USC Computer Science Master's student building AI & automation systems. Specializing in full-stack development with React, Node.js, Python, and AWS." />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ankurkulkarni.dev/" />
-    <meta property="twitter:title" content="Ankur Kulkarni - Full-Stack Software Engineer" />
-    <meta property="twitter:description" content="USC Computer Science Master's student building AI & automation systems. Specializing in full-stack development with React, Node.js, Python, and AWS." />
-    
-    <title>Ankur Kulkarni - Full-Stack Software Engineer</title>
+    <meta
+      property="og:title"
+      content="Ankur Kulkarni — Two perspectives. One engineer."
+    />
+    <meta
+      property="og:description"
+      content="Thoughtful code. Intelligent systems. Explore my work across software, AI, and autonomous systems."
+    />
+    <meta property="og:image" content="/images/ankur-graduation.webp" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Ankur Kulkarni — Software, AI & Autonomy"
+    />
+    <meta
+      name="twitter:description"
+      content="Two perspectives. One engineer. Software, AI, and autonomous systems by Ankur Kulkarni."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Ankur Kulkarni — Software, AI & Autonomy</title>
+    <script>
+      try {
+        const theme =
+          localStorage.getItem("ak-theme") ||
+          (matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.motion =
+          localStorage.getItem("ak-motion") ||
+          (matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "off"
+            : "on");
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript
+      ><p>
+        This interactive portfolio uses JavaScript. Find Ankur’s work on
+        <a href="https://github.com/KulAnkur">GitHub</a> or connect on
+        <a href="https://www.linkedin.com/in/ankurkul95/">LinkedIn</a>.
+      </p></noscript
+    >
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
