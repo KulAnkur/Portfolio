@@ -8,7 +8,7 @@ export default function Footer({ motionEnabled, onToggleMotion }) {
         href="#home"
         aria-label="Ankur Kulkarni — home"
       >
-        a<span>/</span>k.
+        A<span>K</span>
       </a>
       <span>
         © {new Date().getFullYear()} Ankur Kulkarni

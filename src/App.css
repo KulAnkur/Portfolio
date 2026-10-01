@@ -117,7 +117,7 @@
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: 31px;
-  letter-spacing: -3px;
+  letter-spacing: -1.5px;
 }
 .monogram span,
 .footer-brand span {
@@ -1608,7 +1608,7 @@ h2 {
 .footer-brand {
   font-size: 25px;
   color: var(--text);
-  letter-spacing: -2.5px;
+  letter-spacing: -1px;
 }
 .footer-separator {
   margin-inline: 12px;

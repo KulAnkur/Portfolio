@@ -26,7 +26,7 @@ export default function Navigation({ theme, onToggleTheme }) {
           onClick={() => setOpen(false)}
         >
           <span className="monogram">
-            a<span>/</span>k.
+            A<span>K</span>
           </span>
           <span className="brand-name">
             Ankur Kulkarni<span>ENGINEER & BUILDER</span>
